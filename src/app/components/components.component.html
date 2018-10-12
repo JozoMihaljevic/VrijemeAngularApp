@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <div class="page-header clear-filter" filter-color="orange">
+    <div class="page-header-image rellax-header" data-rellax-speed="-7" style="background-image: url('assets/img/oblaci1.jpeg');">
+
+    </div>
+    <div class="container" *ngIf="weather">
+      <div class="content-center brand">
+
+        <h2 class="h1-seo">Vrijeme</h2>
+        <h3>{{weather.name}}</h3>
+        <div class="content table-responsive table-striped">
+          <table class="table table-dark">
+            <thead>
+              <tr>
+                <th class="text-center">Vrijednost</th>
+                <th>Opis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">Vlažnost</td>
+                <td>{{weather.main.humidity}}%</td>
+              </tr>
+              <tr>
+                <td class="text-center">Tlak zraka</td>
+                <td>{{weather.main.pressure}} hPa</td>
+              </tr>
+              <tr>
+                <td class="text-center">Temperatura</td>
+                <td>{{weather.main.temp}} &#8451;</td>
+              </tr>
+              <tr>
+                <td class="text-center">Max temperatura</td>
+                <td>{{weather.main.temp_max}} &#8451;</td>
+              </tr>
+              <tr>
+                <td class="text-center">Min temperatura</td>
+                <td>{{weather.main.temp_min}} &#8451;</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="col-sm-4 offset-sm-4">
+            <div class="form-group">
+              <label></label>
+              <input type="text" name="mjesto" [(ngModel)]="mjesto" placeholder="Unesi mjesto" class="form-control" />
+            </div>
+            <button type="button" class="btn btn-primary btn-lg" (click)="onSubmit()">Odaberi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
